@@ -11,7 +11,7 @@ A complete system is one where there are exactly as many independent equations a
 **Example:**
 $`
 \begin{cases}
-x + y = 3 \\
+x + 2y = 3 \\
 2x - y = 1
 \end{cases}
 `$
@@ -23,7 +23,7 @@ A redundant system has more equations than necessary because some equations are 
 **Example:**
 $`
 \begin{cases}
-x + y = 3 \\
+x + 2y = 3 \\
 2x - y = 1 \\
 3x + y = 4
 \end{cases}
