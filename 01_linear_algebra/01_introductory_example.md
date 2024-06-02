@@ -6,7 +6,7 @@ Linear Algebra plays a crucial role in Machine Learning, providing the mathemati
 ## Linear Regression Overview
 Linear Regression models the relationship between a dependent variable and one or more independent variables using a linear equation. The general form of the linear regression equation is:
 
-\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n \]
+$`\[ y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \ldots + \beta_n x_n \]`$
 
 Where:
 - \( y \) is the dependent variable (target)
