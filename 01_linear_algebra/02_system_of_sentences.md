@@ -1,67 +1,79 @@
-# System of Equations
+# Systems of Equations
 
 ## Introduction
-A system of equations is a set of two or more equations that have common variables. The goal is to find the values of these variables that satisfy all the equations in the system.
+In Linear Algebra, a system of equations is a set of equations with the same variables. These systems help us find values for the variables that satisfy all the equations simultaneously.
 
-## Types of Sentences in a System of Equations
+## Types of Systems
 
-### Complete Sentences
-A complete sentence (or independent equation) in a system is an equation that provides unique information about the variables. Each complete sentence helps us narrow down the possible solutions.
-
-**Example:**
-\[ \begin{cases} 
-2x + 3y = 6 \\
-x - y = 2 
-\end{cases} \]
-
-### Redundant Sentences
-A redundant sentence is an equation that doesn't provide new information because it can be derived from other equations in the system.
+### Complete Systems
+A complete system is one where there are exactly as many independent equations as there are variables. This usually means we can find a unique solution.
 
 **Example:**
-\[ \begin{cases} 
-2x + 3y = 6 \\
-4x + 6y = 12 
-\end{cases} \]
-The second equation is just the first equation multiplied by 2.
+$`
+\begin{cases}
+x + y = 3 \\
+2x - y = 1
+\end{cases}
+`$
+Here, we have two equations and two variables. We can solve this system to find unique values for $` x `$ and $` y `$.
 
-### Contradictory Sentences
-A contradictory sentence is an equation that conflicts with others, making it impossible to find a solution that satisfies all equations simultaneously.
+### Redundant Systems
+A redundant system has more equations than necessary because some equations are combinations of others. This doesn't change the solutions but can make the system appear more complex.
 
 **Example:**
-\[ \begin{cases} 
-2x + 3y = 6 \\
-2x + 3y = 7 
-\end{cases} \]
-The same expression $2x + 3y$ cannot equal both 6 and 7.
+$`
+\begin{cases}
+x + y = 3 \\
+2x - y = 1 \\
+3x + y = 4
+\end{cases}
+`$
+The third equation is just the sum of the first two equations, making it redundant.
+
+### Contradictory Systems
+A contradictory system is one where the equations contradict each other, meaning there is no solution that satisfies all the equations.
+
+**Example:**
+$`
+\begin{cases}
+x + y = 3 \\
+x + y = 5
+\end{cases}
+`$
+Here, the same combination of $` x `$ and $` y `$ cannot equal both 3 and 5, so there is no solution.
 
 ## Singular and Non-Singular Systems
 
 ### Singular Systems
-A singular system is a system of equations that does not have a unique solution. This can happen if the system has either no solutions or infinitely many solutions. Singular systems usually occur when the equations are dependent or contradictory.
-
-**Example with No Solutions:**
-\[ \begin{cases} 
-x + y = 1 \\
-x + y = 2 
-\end{cases} \]
-
-**Example with Infinite Solutions:**
-\[ \begin{cases} 
-x + 2y = 4 \\
-2x + 4y = 8 
-\end{cases} \]
-The second equation is just the first one multiplied by 2.
-
-### Non-Singular Systems
-A non-singular system is a system of equations that has exactly one unique solution. This means all the equations in the system are independent and consistent.
+A singular system (also called degenerate) is one where the matrix of coefficients does not have an inverse. This usually happens when the determinant of the matrix is zero, and it often means there are either no solutions or infinitely many solutions.
 
 **Example:**
-\[ \begin{cases} 
+$`
+\begin{cases}
 x + y = 2 \\
-x - y = 0 
-\end{cases} \]
-This system has the unique solution $x = 1, y = 1$.
+2x + 2y = 4
+\end{cases}
+`$
+The second equation is just twice the first, so they are not independent. The system has infinitely many solutions.
 
-## Summary
-Understanding the types of sentences in a system of equations helps us determine whether we can find a unique solution. Complete sentences provide unique information, redundant sentences do not add new information, and contradictory sentences make the system unsolvable. Additionally, singular systems do not have a unique solution, while non-singular systems do.
+### Non-Singular Systems
+A non-singular system is one where the matrix of coefficients has an inverse (the determinant is not zero). This usually means there is exactly one unique solution.
 
+**Example:**
+$`
+\begin{cases}
+x + y = 3 \\
+2x - y = 1
+\end{cases}
+`$
+The matrix of coefficients is:
+$`
+A = \begin{bmatrix}
+1 & 1 \\
+2 & -1
+\end{bmatrix}
+`$
+Since the determinant of $` A `$ is not zero, the system is non-singular and has a unique solution.
+
+## Conclusion
+Understanding the different types of systems of equations is crucial in Linear Algebra. Complete systems have unique solutions, redundant systems have unnecessary equations, and contradictory systems have no solutions. Singular systems may have no or infinite solutions, while non-singular systems have exactly one solution.
