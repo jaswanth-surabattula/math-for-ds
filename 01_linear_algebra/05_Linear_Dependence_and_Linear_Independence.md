@@ -47,3 +47,45 @@ In 2D, linearly independent vectors form different lines that intersect at the o
 
 ## Conclusion
 Determining linear dependence or independence helps in understanding the structure of vector spaces. Linearly independent vectors span a space fully, while dependent vectors indicate redundancy or constrained dimensions.
+
+# Relationship Between Linear Dependence & Independence and Singular & Non-Singular Systems
+
+## Linear Dependence and Independence
+
+### Linear Dependence
+- A set of vectors is **linearly dependent** if at least one vector can be written as a combination of others.
+- Example: $` \mathbf{v_2} = 2\mathbf{v_1} `$
+- In 2D, they lie on the same line; in 3D, on the same plane.
+
+### Linear Independence
+- A set of vectors is **linearly independent** if no vector can be written as a combination of others.
+- Example: $` \mathbf{v_1} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}, \mathbf{v_2} = \begin{bmatrix} 0 \\ 1 \end{bmatrix} `$
+- They span the space they are in, fully covering 2D or 3D.
+
+## Singular and Non-Singular Systems
+
+### Singular Systems
+- A matrix is **singular** if it does not have an inverse, typically when the determinant is zero.
+- This occurs when the system has no unique solution (either no solution or infinitely many).
+- Geometrically, it corresponds to linearly dependent vectors.
+
+### Non-Singular Systems
+- A matrix is **non-singular** if it has an inverse, meaning the determinant is non-zero.
+- This indicates the system has a unique solution.
+- Geometrically, this corresponds to linearly independent vectors.
+
+## Relationship
+
+### Linear Dependence and Singularity
+- A matrix formed by linearly dependent vectors is singular.
+- Example: $` A = \begin{bmatrix} 1 & 2 \\ 2 & 4 \end{bmatrix} `$. The rows (or columns) are multiples of each other, making $` \det(A) = 0 `$.
+
+### Linear Independence and Non-Singularity
+- A matrix formed by linearly independent vectors is non-singular.
+- Example: $` A = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} `$. The rows (or columns) are independent, making $` \det(A) \neq 0 `$.
+
+### Summary
+- **Linear Dependence** implies **Singularity** (no unique solution).
+- **Linear Independence** implies **Non-Singularity** (unique solution).
+
+Understanding these relationships helps in solving systems of equations and analyzing vector spaces efficiently.
