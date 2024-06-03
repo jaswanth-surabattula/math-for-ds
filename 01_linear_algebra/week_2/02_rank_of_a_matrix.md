@@ -1,4 +1,4 @@
-# Rank of a Matrix
+# Calculation of Rank
 
 ## Definition
 The rank of a matrix is the number of linearly independent rows or columns in the matrix. It is a fundamental concept in linear algebra because it provides information about the solutions to a system of linear equations represented by the matrix.
@@ -19,65 +19,73 @@ To determine the rank using RREF:
 Given matrix:
 $`
 A = \begin{bmatrix}
-1 & 2 & 3 \\
-4 & 5 & 6 \\
-7 & 8 & 9
+1 & 1 & 1 \\
+2 & 3 & 1 \\
+1 & 2 & 2
 \end{bmatrix}
 `$
 
 #### Convert to REF:
-1. Subtract 4 times Row 1 from Row 2:
+1. Subtract 2 times Row 1 from Row 2:
    $`
    \begin{bmatrix}
-   1 & 2 & 3 \\
-   0 & -3 & -6 \\
-   7 & 8 & 9
+   1 & 1 & 1 \\
+   0 & 1 & -1 \\
+   1 & 2 & 2
    \end{bmatrix}
    `$
-2. Subtract 7 times Row 1 from Row 3:
+2. Subtract Row 1 from Row 3:
    $`
    \begin{bmatrix}
-   1 & 2 & 3 \\
-   0 & -3 & -6 \\
-   0 & -6 & -12
+   1 & 1 & 1 \\
+   0 & 1 & -1 \\
+   0 & 1 & 1
    \end{bmatrix}
    `$
-3. Divide Row 2 by -3:
+3. Subtract Row 2 from Row 3:
    $`
    \begin{bmatrix}
-   1 & 2 & 3 \\
-   0 & 1 & 2 \\
-   0 & -6 & -12
+   1 & 1 & 1 \\
+   0 & 1 & -1 \\
+   0 & 0 & 2
    \end{bmatrix}
    `$
-4. Add 6 times Row 2 to Row 3:
-   $`
-   \begin{bmatrix}
-   1 & 2 & 3 \\
-   0 & 1 & 2 \\
-   0 & 0 & 0
-   \end{bmatrix}
-   `$
-   - Rank = 2 (Two nonzero rows)
+   - Rank = 3 (Three nonzero rows)
 
 #### Convert to RREF:
-1. From the REF, subtract 2 times Row 2 from Row 1:
+1. Divide Row 3 by 2:
    $`
    \begin{bmatrix}
-   1 & 0 & -1 \\
-   0 & 1 & 2 \\
-   0 & 0 & 0
+   1 & 1 & 1 \\
+   0 & 1 & -1 \\
+   0 & 0 & 1
    \end{bmatrix}
    `$
-   - Rank = 2 (Two nonzero rows)
+2. Add Row 3 to Row 2:
+   $`
+   \begin{bmatrix}
+   1 & 1 & 1 \\
+   0 & 1 & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   `$
+3. Subtract Row 2 and Row 3 from Row 1:
+   $`
+   \begin{bmatrix}
+   1 & 0 & 0 \\
+   0 & 1 & 0 \\
+   0 & 0 & 1
+   \end{bmatrix}
+   `$
+   - Rank = 3 (Three nonzero rows)
 
-# Relation with Echelon Forms
+## Relation of Rank with Echelon Forms
 
-## Row Echelon Form (REF)
+### Row Echelon Form (REF)
 - The number of nonzero rows in REF is the rank of the matrix.
 - The process involves applying row operations to convert the matrix to upper triangular form.
 
-## Reduced Row Echelon Form (RREF)
+### Reduced Row Echelon Form (RREF)
 - The number of nonzero rows in RREF is also the rank of the matrix.
 - Each leading entry in the RREF is 1 and is the only nonzero entry in its column.
 
@@ -87,7 +95,7 @@ A = \begin{bmatrix}
   - If the rank equals the number of variables, there is a unique solution.
   - If the rank is less than the number of variables, there are infinitely many solutions.
 
-### Example: Solving a System of Equations
+## Example: Solving a System of Equations
 Given the system:
 $`
 \begin{cases}
@@ -116,11 +124,16 @@ x + 2y + 2z = 8
    $`
    \begin{bmatrix}
    1 & 0 & 2 & | & 4 \\
-   0 & 1 & -1 & | & -2 \\
-   0 & 0 & 0 & | & 0
+   0 & 1 & 0 & | & 0 \\
+   0 & 0 & 1 & | & 2
    \end{bmatrix}
    `$
-   - Rank = 2 (Two nonzero rows)
+   - Rank = 3 (Three nonzero rows)
 
-## Conclusion
+From the RREF, we can see the solutions:
+$`
+x = 4, \quad y = 0, \quad z = 2
+`$
+
+# Conclusion
 The rank of a matrix is a key concept in linear algebra that indicates the maximum number of linearly independent rows or columns. It helps determine the solutions of a system of linear equations and is closely related to the matrix's echelon forms (REF and RREF). By converting a matrix to these forms, we can easily find its rank and understand the nature of the system it represents.
