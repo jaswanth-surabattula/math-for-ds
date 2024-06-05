@@ -218,3 +218,4 @@ A = \begin{bmatrix}
   \end{bmatrix}
   `$
   - The determinant is zero, indicating the matrix is singular.
+
