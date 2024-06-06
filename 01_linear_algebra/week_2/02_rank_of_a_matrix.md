@@ -1,5 +1,6 @@
 # Calculation of Rank
 
+
 ## Definition
 The rank of a matrix is the number of linearly independent rows or columns in the matrix. It is a fundamental concept in linear algebra because it provides information about the solutions to a system of linear equations represented by the matrix.
 
